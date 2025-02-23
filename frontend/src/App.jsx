@@ -19,6 +19,8 @@ import TemplateSelection from "./pages/ResumeBuilder/TemplateSelection";
 import PreviewResume from "./pages/ResumeBuilder/PreviewResume";
 import ResumeLanding from "./pages/ResumeLanding";
 import ResumeAnalysis from "./components/resume/ResumeAnalysis";
+import CommunityPage from "./pages/CommunityPage";
+import CommunityHub from "./pages/community/CommunityHub";
 
 function App() {
   return (
@@ -54,6 +56,8 @@ function App() {
             <Route path="/resume/templates" element={<TemplateSelection />} />
             <Route path="/resume/preview" element={<PreviewResume />} />
             <Route path="/resume/analysis" element={<ResumeAnalysis />} />
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/community/CommunityHub" element={<CommunityHub />} />
           </Route>
         </Routes>
       </Router>
