@@ -1,4 +1,3 @@
-
 import express from "express";
 import cors from "cors";
 import { chatSession } from "./geminiHelp/genemini.js";
@@ -16,8 +15,7 @@ const MONGO_URL = process.env.MONGO_URL;
 app.use(cors());
 app.use(express.json());
 
-
-// db connection 
+// db connection
 try {
   mongoose.connect(MONGO_URL);
   console.log("Connected to mongoDB");
@@ -25,9 +23,8 @@ try {
   console.log(error);
 }
 
-
 app.get("/", (req, res) => {
-  res.send("Hello")
+  res.send("Hello");
 });
 
 // Roadmap Generation Route
@@ -122,14 +119,11 @@ app.post("/api/analyze-resume", async (req, res) => {
     res.json(analysis);
   } catch (error) {
     console.error("Resume analysis error:", error.message);
-    res
-      .status(500)
-      .json({
-        error: "Failed to analyze resume",
-        message: error.message,
-        details:
-          process.env.Node_ENV == "development" ? error.stack : undefined,
-      });
+    res.status(500).json({
+      error: "Failed to analyze resume",
+      message: error.message,
+      details: process.env.Node_ENV == "development" ? error.stack : undefined,
+    });
   }
 });
 
