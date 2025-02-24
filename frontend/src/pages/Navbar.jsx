@@ -34,6 +34,11 @@ const Navbar = () => {
       icon: <Info className="h-4 w-4 mr-2" />,
       href: "/AboutPage",
     },
+    {
+      name: "Community",
+      icon: <Info className="h-4 w-4 mr-2" />,
+      href: "/community",
+    },
   ];
 
   return (
